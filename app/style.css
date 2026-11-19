@@ -1,0 +1,29 @@
+html, body { margin: 0; min-height: 100%; background: #160a24; color: #f5f0ea; font: 15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+.app { display: flex; gap: 28px; align-items: flex-start; justify-content: center; padding: 24px; box-sizing: border-box; max-width: 1500px; margin: 0 auto; }
+.controls { display: flex; flex-direction: column; gap: 14px; width: 340px; flex: none; }
+.controls h1 { margin: 0; font-size: 30px; font-weight: 900; font-style: italic; letter-spacing: 0.5px;
+  background: linear-gradient(90deg, #ff2e88, #ff7a18, #ffd166); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.tag { margin: 0; color: #c9b8d6; }
+.hint { margin: 0; color: #9d8cab; font-size: 13px; }
+fieldset { border: 1px solid #3a2350; border-radius: 10px; padding: 12px; margin: 0; display: flex; flex-direction: column; gap: 10px; background: #1e1030; }
+legend { font-weight: 800; color: #ffd166; padding: 0 6px; }
+label { display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 13px; }
+input[type=text], select { font: inherit; padding: 8px; border: 1px solid #5a3a78; border-radius: 6px; background: #2a1844; color: #fff; }
+input[type=range] { accent-color: #ff2e88; }
+button { font: inherit; font-weight: 700; padding: 9px 12px; border: 1px solid #5a3a78; border-radius: 6px; background: #2a1844; color: #fff; cursor: pointer; }
+button:hover { border-color: #ff2e88; }
+button.active { background: #ff2e88; border-color: #ff2e88; }
+button.primary { background: linear-gradient(90deg, #ff2e88, #ff7a18); border: 0; font-size: 16px; padding: 12px; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; }
+.row button { flex: 1 1 auto; }
+#status { margin: 0; color: #39e6ff; min-height: 1.2em; }
+.preview { flex: 1 1 auto; min-width: 0; position: sticky; top: 24px; }
+.preview canvas { width: 100%; height: auto; display: block; border-radius: 8px; box-shadow: 0 12px 40px rgba(0,0,0,0.55); background: #000; }
+.preview .hint { margin-top: 10px; }
+/* Screenshot modes: cover alone, full-bleed. */
+body.shot-cover .controls, body.shot-cover .preview .hint { display: none; }
+body.shot-cover { background: #000; }
+body.shot-cover .app { padding: 0; max-width: none; }
+body.shot-cover .preview { position: static; }
+body.shot-cover canvas { width: 100vw; height: 100vh; object-fit: contain; border-radius: 0; box-shadow: none; }
+@media (max-width: 900px) { .app { flex-direction: column; } .controls { width: 100%; } .preview { position: static; width: 100%; } }
